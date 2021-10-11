@@ -1,7 +1,6 @@
 package com.opstty;
 
-import com.opstty.job.DistrictCount;
-import com.opstty.job.WordCount;
+import com.opstty.job.*;
 import org.apache.hadoop.util.ProgramDriver;
 
 public class AppDriver {
@@ -15,6 +14,18 @@ public class AppDriver {
 
             programDriver.addClass("districtcount", DistrictCount.class,
                     "A map/reduce program that counts the tress in each district.");
+
+            programDriver.addClass("displayspecies", DisplaySpecies.class,
+                    "A map/reduce program that display every species of tree.");
+
+            programDriver.addClass("kindcount", KindCount.class,
+                    "A map/reduce program that count trees by kind.");
+
+            programDriver.addClass("kindmaxheight", KindMaxHeight.class,
+                    "A map/reduce program that display every max height of trees by kind.");
+
+            programDriver.addClass("sortheight", SortHeight.class,
+                    "A map/reduce program that sort the height of trees.");
 
             exitCode = programDriver.run(argv);
         } catch (Throwable throwable) {
